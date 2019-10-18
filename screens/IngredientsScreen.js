@@ -1,5 +1,14 @@
+/*
+** @author: Argert Boja
+** @date: 18/10/2019
+** @version: 1.0.0
+** @org: ABEnt.
+** @description: The screen which shows the ingredients
+*/
+
+// Imports
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 const IngredientsScreen = props => {
     return (
@@ -7,6 +16,7 @@ const IngredientsScreen = props => {
             <Text>
                 Ingredients Screen
             </Text>
+            <Button title='Go to Results' onPress={() => props.navigation.navigate({routeName: 'Results'})} />
         </View>
     );
 }

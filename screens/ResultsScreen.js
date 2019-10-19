@@ -11,6 +11,11 @@ import React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
 const ResultsScreen = props => {
+
+    const selectedIDs = props.navigation.getParam('SelectedIDs');
+    
+    console.log(selectedIDs);
+
     return (
         <View style={StyleSheet.screen}>
             <Text>

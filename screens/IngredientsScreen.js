@@ -7,25 +7,68 @@
 */
 
 // Imports
-import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { Button, FlatList, Platform, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import Colors from '../constants/Colors';
+import { INGREDIENTS } from '../data/ingredients_data';
 
 const IngredientsScreen = props => {
+
+    const [selectedIngredients, setSelectedIngredients] = useState([2,2]);
+
+    const addIngredientHandler = (ingredientID) => {
+        setSelectedIngredients([...selectedIngredients, ingredientID]);
+    }
+
+    const renderIngredient = (itemData) => {
+        return (
+            <TouchableOpacity 
+                style={styles.ingredientContainer} 
+                onPress={() => addIngredientHandler(itemData.item.id)}> 
+                <View >
+                    <Text>
+                        {itemData.item.name}
+                    </Text>
+                </View>
+                <Button title='OK' onPress={() => console.log(selectedIngredients)}/>
+            </TouchableOpacity>
+        );
+    }
+    
     return (
-        <View style={StyleSheet.screen}>
-            <Text>
-                Ingredients Screen
-            </Text>
-            <Button title='Go to Results' onPress={() => props.navigation.navigate({routeName: 'Results'})} />
+        <View>
+        <FlatList keyExtractor={(item, index) => item.id} data={INGREDIENTS} renderItem={renderIngredient} />
+        <Button 
+            title='Kërko' 
+            onPress={() => {props.navigation.navigate({
+                routeName: 'Results', 
+                params: {
+                    selectedIDs : selectedIngredients
+                    }
+                })}
+            }/>
         </View>
     );
 }
 
-const style = StyleSheet.create({
-    screen: {
+IngredientsScreen.navigationOptions = {
+    headerTitle: 'Përbërësit',
+    headerStyle: {
+        backgroundColor: Platform.OS === 'android' ? Colors.primary : 'white'
+    },
+    headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primary,
+}
+
+const styles = StyleSheet.create({
+    ingredientContainer: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginVertical: 5,
+        padding: 5,
+        height: 50,
+        borderBottomColor: 'gray',
+        borderBottomWidth: 0.5
     }
 });
 

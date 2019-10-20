@@ -12,7 +12,7 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 
 const ResultsScreen = props => {
 
-    const selectedIDs = props.navigation.getParam('SelectedIDs');
+    const selectedIDs = props.navigation.getParam('selectedIDs');
     
     console.log(selectedIDs);
 

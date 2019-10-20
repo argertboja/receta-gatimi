@@ -14,30 +14,38 @@ import { INGREDIENTS } from '../data/ingredients_data';
 
 const IngredientsScreen = props => {
 
-    const [selectedIngredients, setSelectedIngredients] = useState([2,2]);
+    const [selectedIngredients, setSelectedIngredients] = useState([]);
 
-    const addIngredientHandler = (ingredientID) => {
-        setSelectedIngredients([...selectedIngredients, ingredientID]);
+    const addIngredientHandler = (ingredient) => {
+        if (selectedIngredients.includes(ingredient)) { 
+        console.log('exists');
+            setSelectedIngredients(currentIngredients => {return currentIngredients.filter(id => id !== ingredient)})} else {
+            console.log(selectedIngredients);
+        setSelectedIngredients(prev => [...prev, ingredient]);}
     }
 
     const renderIngredient = (itemData) => {
         return (
+            <View>
             <TouchableOpacity 
                 style={styles.ingredientContainer} 
-                onPress={() => addIngredientHandler(itemData.item.id)}> 
+                onPress={() =>  addIngredientHandler(itemData.item.id)
+                }
+                > 
                 <View >
                     <Text>
                         {itemData.item.name}
                     </Text>
-                </View>
-                <Button title='OK' onPress={() => console.log(selectedIngredients)}/>
+                </View>                
             </TouchableOpacity>
+            </View>
         );
     }
     
     return (
         <View>
         <FlatList keyExtractor={(item, index) => item.id} data={INGREDIENTS} renderItem={renderIngredient} />
+        <Text>{selectedIngredients.includes(3)}</Text>
         <Button 
             title='Kërko' 
             onPress={() => {props.navigation.navigate({
@@ -47,6 +55,7 @@ const IngredientsScreen = props => {
                     }
                 })}
             }/>
+        
         </View>
     );
 }

@@ -7,10 +7,9 @@
 */
 
 class IngredientModel {
-    constructor(id, icon, name) {
-        this.id = id,
-        this.icon = icon,
-        this.name = name
+    constructor(value, label) {
+        this.value = value,
+        this.label = label
     }
 }
 

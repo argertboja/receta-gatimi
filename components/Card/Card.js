@@ -8,7 +8,7 @@
 
 // Imports
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { ImageBackground, StyleSheet, Text, View } from 'react-native';
 import Colors from '../../constants/Colors';
 import RecipesImages from '../../data/recipes_images_data';
 
@@ -16,7 +16,9 @@ const card = props => {
     return (
         <View style={styles.cardContainer}>
             <View style={styles.header}>
-                <Image style={styles.thumbnail} source={RecipesImages[props.value]} />
+                <ImageBackground style={styles.thumbnail} source={RecipesImages[props.value]} >
+                    <Text style={styles.headerTitle} numberOfLines={1}>{props.title}</Text>
+                </ImageBackground>
             </View>
             <View style={styles.footer}>
                 <Text style={styles.footerDetails}>
@@ -55,11 +57,18 @@ const styles = StyleSheet.create({
         color: Colors.primary
     },
     header: {
-        height: '85%'
+        height: '85%',
+    },
+    headerTitle: {
+        fontSize: 18,
+        backgroundColor: 'rgba(0,0,0,0.5)',
+        color: 'white',
+        textAlign: 'center',
     },
     thumbnail: {
         width: '100%',
-        height: '100%'
+        height: '100%',
+        justifyContent: 'flex-end'
     }
 });
 

@@ -9,6 +9,8 @@
 // Imports
 import React from 'react';
 import { StyleSheet } from 'react-native';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
+import HeaderButton from '../components/Buttons/HeaderButton';
 import RecipeCard from '../components/Card/RecipeCard';
 
 const ReceipeScreen = props => {
@@ -25,7 +27,10 @@ ReceipeScreen.navigationOptions = navigationData => {
     const title = navigationData.navigation.getParam('recipeName');
 
     return {
-        headerTitle: title
+        headerTitle: title,
+        headerRight: <HeaderButtons HeaderButtonComponent={HeaderButton}>
+            <Item title='Te preferuara' iconName='ios-star' onPress={() => { }} />
+        </HeaderButtons>
     };
 }
 

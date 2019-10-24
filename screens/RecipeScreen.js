@@ -11,6 +11,7 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
 const ReceipeScreen = props => {
+
     return (
         <View style={StyleSheet.screen}>
             <Text>
@@ -18,6 +19,14 @@ const ReceipeScreen = props => {
             </Text>
         </View>
     );
+}
+
+ReceipeScreen.navigationOptions = navigationData => {
+    const title = navigationData.navigation.getParam('recipeName');
+
+    return {
+        headerTitle: title
+    };
 }
 
 const style = StyleSheet.create({

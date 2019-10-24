@@ -8,30 +8,49 @@
 
 // Imports
 import React from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { FlatList, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import Card from '../components/Card/Card';
+import { RESULTS } from '../data/results-data';
 
 const ResultsScreen = props => {
 
+    const renderResults = itemData => {
+        return (
+            <TouchableOpacity
+                style={style.screen}
+                onPress={() => {
+                    props.navigation.navigate({
+                        routeName: 'Recipe',
+                        params: { recipeName: itemData.item.label }
+                    });
+                }}>
+                <Card value={itemData.item.value} title={itemData.item.label} time={itemData.item.time} />
+            </TouchableOpacity>
+        );
+    }
+
     const selectedIDs = props.navigation.getParam('selectedIDs');
-    
-    console.log(selectedIDs);
 
     return (
-        <View style={StyleSheet.screen}>
-            <Text>
-                Results Screen
-            </Text>
-            <Button title='Go to recipe' onPress={() => props.navigation.navigate({routeName:'Recipe'})}/>
-        </View>
+        <ScrollView>
+            <FlatList
+                keyExtractor={(item, index) => item.id}
+                data={RESULTS} renderItem={renderResults}
+                numColumns={2} />
+        </ScrollView>
     );
 }
 
 const style = StyleSheet.create({
     screen: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    }
+        width: '45%',
+        marginHorizontal: '2.5%',
+
+    },
 });
+
+ResultsScreen.navigationOptions = {
+    headerTitle: 'Rezultatet'
+}
 
 export default ResultsScreen;

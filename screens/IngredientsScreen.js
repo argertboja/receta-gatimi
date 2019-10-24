@@ -8,7 +8,7 @@
 
 // Imports
 import React, { useState } from 'react';
-import { Button, Image, Platform, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Button, Image, ScrollView, StyleSheet, Text, View } from 'react-native';
 import SelectMultiple from 'react-native-select-multiple';
 // Import data
 import Colors from '../constants/Colors';
@@ -72,11 +72,7 @@ const IngredientsScreen = props => {
 
 // Navigation of screens
 IngredientsScreen.navigationOptions = {
-    headerTitle: 'Përbërësit',
-    headerStyle: {
-        backgroundColor: Platform.OS === 'android' ? Colors.primary : 'white'
-    },
-    headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primary,
+    headerTitle: 'Përbërësit'
 }
 
 // Styling

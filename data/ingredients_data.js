@@ -18,4 +18,12 @@ export const INGREDIENTS = [
     new IngredientModel('apple', 'Mollë'),
     new IngredientModel('cheese', 'Djathë'),
     new IngredientModel('tomatoes', 'Domate'),
+    new IngredientModel('banana', 'Banane'),
+    new IngredientModel('chocolate', 'Cokollatë'),
+    new IngredientModel('meat', 'Vic'),
+    new IngredientModel('rice', 'Oriz'),
+    new IngredientModel('chicken', 'Pulë'),
+    new IngredientModel('apple', 'Mollë'),
+    new IngredientModel('cheese', 'Djathë'),
+    new IngredientModel('tomatoes', 'Domate'),
 ];

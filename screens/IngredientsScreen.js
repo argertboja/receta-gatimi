@@ -43,18 +43,22 @@ const IngredientsScreen = props => {
 
     // Main view which displays igredients
     return (
-        <ScrollView>
-            <SelectMultiple
-                items={ingreds}
-                renderLabel={renderLabel}
-                selectedItems={selectedIngredients}
-                onSelectionsChange={onSelectionsChange}
-                checkboxSource={require('../assets/images/icons/checkbox-unchecked.png')}
-                selectedCheckboxSource={require('../assets/images/icons/checkbox-checked.png')} />
+        <View style={styles.container}>
+            <ScrollView>
+                <SelectMultiple
+                    items={ingreds}
+                    renderLabel={renderLabel}
+                    selectedItems={selectedIngredients}
+                    onSelectionsChange={onSelectionsChange}
+                    checkboxSource={require('../assets/images/icons/checkbox-unchecked.png')}
+                    selectedCheckboxSource={require('../assets/images/icons/checkbox-checked.png')} />
 
-            {/* Button for going to next screen and sending selected ingredients*/}
+                {/* Button for going to next screen and sending selected ingredients*/}
+
+            </ScrollView>
             <Button
-                style={styles.button}
+                style={{ position: 'fixed' }}
+                color={Colors.primary}
                 title='Kërko'
                 onPress={() => {
                     props.navigation.navigate({
@@ -66,7 +70,7 @@ const IngredientsScreen = props => {
                 }
                 }
             />
-        </ScrollView>
+        </View>
     );
 }
 
@@ -77,6 +81,9 @@ IngredientsScreen.navigationOptions = {
 
 // Styling
 const styles = StyleSheet.create({
+    container: {
+        flex: 1
+    },
     ingredientContainer: {
         flex: 1,
         justifyContent: 'space-between',
@@ -85,7 +92,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row'
     },
     button: {
-        backgroundColor: Colors.primary,
+        marginVertical: 50
     },
     ingredientName: {
         color: Colors.primary,

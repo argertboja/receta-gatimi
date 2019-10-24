@@ -15,13 +15,15 @@ import RecipesImages from '../../data/recipes_images_data';
 const card = props => {
     return (
         <View style={styles.cardContainer}>
-            <Image style={styles.thumbnail} source={RecipesImages[props.value]} />
-            <View style={styles.text}>
-                <Text >
-                    {props.title}
-                </Text>
-                <Text >
+            <View style={styles.header}>
+                <Image style={styles.thumbnail} source={RecipesImages[props.value]} />
+            </View>
+            <View style={styles.footer}>
+                <Text style={styles.footerDetails}>
                     {props.time}
+                </Text>
+                <Text style={styles.footerDetails}>
+                    match
                 </Text>
             </View>
         </View>
@@ -38,15 +40,26 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         width: '100%',
         elevation: 2,
-        overflow: 'hidden'
+        overflow: 'hidden',
+        height: 180
     },
-    text: {
+    footer: {
         flex: 1,
-        width: '100%'
+        width: '100%',
+        flexDirection: 'row',
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        height: '15%',
+    },
+    footerDetails: {
+        color: Colors.primary
+    },
+    header: {
+        height: '85%'
     },
     thumbnail: {
         width: '100%',
-        height: 150
+        height: '100%'
     }
 });
 

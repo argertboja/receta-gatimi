@@ -21,7 +21,8 @@ const ResultsScreen = props => {
                 onPress={() => {
                     props.navigation.navigate({
                         routeName: 'Recipe',
-                        params: { recipeName: itemData.item.label }
+                        params: { recipeName: itemData.item.label, recipeValue: itemData.item.value },
+
                     });
                 }}>
                 <Card value={itemData.item.value} title={itemData.item.label} time={itemData.item.time} />

@@ -8,16 +8,16 @@
 
 // Imports
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+import RecipeCard from '../components/Card/RecipeCard';
 
 const ReceipeScreen = props => {
 
     return (
-        <View style={StyleSheet.screen}>
-            <Text>
-                Receipe Screen
-            </Text>
-        </View>
+        <RecipeCard
+            title={props.navigation.getParam('recipeName')}
+            value={props.navigation.getParam('recipeValue')} />
+
     );
 }
 

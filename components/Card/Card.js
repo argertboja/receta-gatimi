@@ -1,3 +1,12 @@
+/*
+** @author: Argert Boja
+** @date: 23/10/2019
+** @version: 1.0.0
+** @org: ABEnt.
+** @description: Card View for a meal reasult
+*/
+
+// Imports
 import React from 'react';
 import { Image, StyleSheet, Text, View } from 'react-native';
 import Colors from '../../constants/Colors';

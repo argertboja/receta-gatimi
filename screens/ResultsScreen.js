@@ -30,7 +30,8 @@ const ResultsScreen = props => {
         );
     }
 
-    const selectedIDs = props.navigation.getParam('selectedIDs');
+    const selectedIDs = props.navigation.getParam('selectedIDarray');
+    console.log(selectedIDs);
 
     return (
         <ScrollView>

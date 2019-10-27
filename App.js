@@ -11,7 +11,7 @@ import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
-import { useScreens } from 'react-native-screens';
+import { enableScreens } from 'react-native-screens';
 import MealsNavigation from './navigation/MealsNavigation';
 
 
@@ -25,7 +25,7 @@ const fetchFonts = () => {
 
 export default function App() {
 
-    useScreens();
+    enableScreens();
 
     const [fontLoaded, setFontLoaded] = useState(false);
 

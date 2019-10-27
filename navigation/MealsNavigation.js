@@ -53,10 +53,10 @@ const MealTabNavigation = createBottomTabNavigator({
     , {
         tabBarOptions:
         {
-            inactiveTintColor: Colors.primary,
+            inactiveTintColor: Platform.OS === 'android' ? Colors.primary : 'white',
             inactiveBackgroundColor: 'white',
-            activeTintColor: 'white',
-            activeBackgroundColor: Colors.primary
+            activeTintColor: Platform.OS === 'android' ? 'white' : Colors.primary,
+            activeBackgroundColor: Platform.OS === 'android' ? Colors.primary : 'white'
         }
     });
 

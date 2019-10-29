@@ -8,16 +8,17 @@
 
 // Imports
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet } from 'react-native';
+import ResultListView from '../components/Lists/ResultsListView';
 
 const FavoritesScreen = props => {
     return (
-        <View style={StyleSheet.screen}>
-            <Text>
-                Favorites Screen
-            </Text>
-        </View>
+        <ResultListView navigation={props.navigation} numCol={1} />
     );
+}
+
+FavoritesScreen.navigationOptions = {
+    headerTitle: 'Të Preferuara'
 }
 
 const style = StyleSheet.create({

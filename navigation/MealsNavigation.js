@@ -20,17 +20,27 @@ import IngredientsScreen from '../screens/IngredientsScreen';
 import RecipeScreen from '../screens/RecipeScreen';
 import ResultsScreen from '../screens/ResultsScreen';
 
+const customDefaultNavigationOptions = {
+    headerStyle: {
+        backgroundColor: Platform.OS === 'android' ? Colors.primary : 'white'
+    },
+    headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primary
+
+};
+
 const MealsNavigation = createStackNavigator({
     Ingredients: IngredientsScreen,
     Results: ResultsScreen,
     Recipe: RecipeScreen,
 }, {
-    defaultNavigationOptions: {
-        headerStyle: {
-            backgroundColor: Platform.OS === 'android' ? Colors.primary : 'white'
-        },
-        headerTintColor: Platform.OS === 'android' ? 'white' : Colors.primary
-    }
+    defaultNavigationOptions: customDefaultNavigationOptions
+});
+
+const FavStack = createStackNavigator({
+    Preferenca: FavoritesScreen,
+    Receta: RecipeScreen
+}, {
+    defaultNavigationOptions: customDefaultNavigationOptions
 });
 
 const MealTabNavigation = createBottomTabNavigator({
@@ -43,21 +53,20 @@ const MealTabNavigation = createBottomTabNavigator({
         }
     },
     'Te preferuara': {
-        screen: FavoritesScreen, navigationOptions: {
+        screen: FavStack, navigationOptions: {
             tabBarIcon: tabInfo => {
                 return <Ionicons name='ios-star' size={25} color={tabInfo.tintColor} />
             }
         }
     }
-}
-    , {
-        tabBarOptions:
-        {
-            inactiveTintColor: Platform.OS === 'android' ? Colors.primary : 'white',
-            inactiveBackgroundColor: 'white',
-            activeTintColor: Platform.OS === 'android' ? 'white' : Colors.primary,
-            activeBackgroundColor: Platform.OS === 'android' ? Colors.primary : 'white'
-        }
-    });
+}, {
+    tabBarOptions:
+    {
+        inactiveTintColor: Platform.OS === 'android' ? Colors.primary : 'white',
+        inactiveBackgroundColor: 'white',
+        activeTintColor: Platform.OS === 'android' ? 'white' : Colors.primary,
+        activeBackgroundColor: Platform.OS === 'android' ? Colors.primary : 'white'
+    }
+});
 
 export default createAppContainer(MealTabNavigation);

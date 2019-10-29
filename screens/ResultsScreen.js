@@ -8,38 +8,16 @@
 
 // Imports
 import React from 'react';
-import { FlatList, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
-import Card from '../components/Card/Card';
-import { RESULTS } from '../data/results-data';
+import { StyleSheet } from 'react-native';
+import ResultListView from '../components/Lists/ResultsListView';
 
 const ResultsScreen = props => {
-
-    const renderResults = itemData => {
-        return (
-            <TouchableOpacity
-                style={style.screen}
-                onPress={() => {
-                    props.navigation.navigate({
-                        routeName: 'Recipe',
-                        params: { recipeName: itemData.item.label, recipeValue: itemData.item.value },
-
-                    });
-                }}>
-                <Card value={itemData.item.value} title={itemData.item.label} time={itemData.item.time} />
-            </TouchableOpacity>
-        );
-    }
 
     const selectedIDs = props.navigation.getParam('selectedIDarray');
     console.log(selectedIDs);
 
     return (
-        <ScrollView>
-            <FlatList
-                keyExtractor={(item, index) => item.id}
-                data={RESULTS} renderItem={renderResults}
-                numColumns={2} />
-        </ScrollView>
+        <ResultListView navigation={props.navigation} numCol={2} />
     );
 }
 

@@ -77,6 +77,15 @@ class IngredientsScreen extends Component {
                         })
                     }}
                 />
+            </HeaderButtons>,
+            headerLeft: <HeaderButtons HeaderButtonComponent={HeaderButton} >
+                <Item
+                    title='Menu'
+                    iconName='ios-menu'
+                    onPress={() => {
+                        navigation.toggleDrawer();
+                    }}
+                />
             </HeaderButtons>
         }
 

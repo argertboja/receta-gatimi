@@ -4463,10 +4463,10 @@ react-native-web@^0.11.7:
     xmldoc "^0.4.0"
     yargs "^9.0.0"
 
-react-navigation-drawer@^2.2.2:
-  version "2.3.1"
-  resolved "https://registry.yarnpkg.com/react-navigation-drawer/-/react-navigation-drawer-2.3.1.tgz#87eb7538b48683873c88794756ec30a3334a4de9"
-  integrity sha512-6PizJlet6tWpfoNaxltSSwa03tgj9zsOLgUvmZ3SBw8kWbv0C5X1w9nCYCtL+wsmE3jvaSNVQndAF6dEajMUMA==
+react-navigation-drawer@^2.3.2:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/react-navigation-drawer/-/react-navigation-drawer-2.3.2.tgz#399a1709efc43cacaadd1dc2808af4a3d0c86b46"
+  integrity sha512-J0+71FzDGbNnLzUBfwsSmyzFMETAdnrdaquL5YW1lm4YaHmSWfwPZ+hzLMA5SoihC4qxr+OvlVbbfL3ZO7IDRA==
 
 react-navigation-header-buttons@^3.0.3:
   version "3.0.3"

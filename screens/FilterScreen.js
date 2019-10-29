@@ -20,6 +20,10 @@ const FilterScreen = props => {
     );
 }
 
+FilterScreen.navigationOptions = {
+    headerTitle: 'Filterat'
+}
+
 const style = StyleSheet.create({
     screen: {
         flex: 1,

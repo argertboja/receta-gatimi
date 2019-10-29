@@ -8,11 +8,19 @@
 */
 
 import React from 'react';
-import { FlatList, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
+import { Dimensions, FlatList, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
 import { RESULTS } from '../../data/results-data';
 import Card from '../Card/Card';
 
 const ResultListView = props => {
+
+    const styles = StyleSheet.create({
+        screen: {
+            width: Dimensions.get('window').width / props.numCol - Dimensions.get('window').width / 20,
+            marginHorizontal: '2.5%',
+            flexDirection: 'row'
+        },
+    });
 
     const renderResults = itemData => {
         return (
@@ -39,13 +47,5 @@ const ResultListView = props => {
         </ScrollView>
     );
 }
-
-const styles = StyleSheet.create({
-    screen: {
-        width: '90%',
-        marginHorizontal: '2.5%',
-
-    },
-});
 
 export default ResultListView;

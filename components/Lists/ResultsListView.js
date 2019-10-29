@@ -29,7 +29,7 @@ const ResultListView = props => {
                 onPress={() => {
                     props.navigation.navigate({
                         routeName: 'Recipe',
-                        params: { recipeName: itemData.item.label, recipeValue: itemData.item.value },
+                        params: { recipeID: itemData.item.id, recipeName: itemData.item.label },
 
                     });
                 }}>

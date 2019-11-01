@@ -9,6 +9,8 @@
 // Imports
 import React, { useState } from 'react';
 import { Platform, StyleSheet, Switch, Text, View } from 'react-native';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
+import HeaderButton from '../components/Buttons/HeaderButton';
 import Colors from '../constants/Colors';
 
 const FilterSwitch = props => {
@@ -59,8 +61,13 @@ const FilterScreen = props => {
     );
 }
 
-FilterScreen.navigationOptions = {
-    headerTitle: 'Filterat'
+FilterScreen.navigationOptions = navData => {
+    return ({
+        headerTitle: 'Filterat',
+        headerLeft: <HeaderButtons HeaderButtonComponent={HeaderButton}>
+            <Item title='Te preferuara' iconName='ios-arrow-round-back' onPress={() => { navData.navigation.navigate({ routeName: 'Meals' }) }} />
+        </HeaderButtons>
+    });
 }
 
 const style = StyleSheet.create({

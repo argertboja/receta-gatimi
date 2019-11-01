@@ -16,12 +16,17 @@ export const RESULTS = [
         '30 min',
         'taveKosi',
         [
-            '2 Vezë',
-            '1 gote qumësht',
-            '1/2 kg Miell'
+            'Vezë',
+            'Qumësht',
+            'Miell'
+        ],
+        [
+            '2',
+            '1 Gotë',
+            '1 KG'
         ], [
-        'Perziejme vezet per 5 minuta',
-        'Hedhim miellin',
+        'Perziejme vezet per 5 minuta Perziejme vezet per 5 minuta Perziejme vezet per 5 minuta Perziejme vezet per 5 minuta Perziejme vezet per 5 minuta Perziejme vezet per 5 minuta',
+        'Hedhim miellin Perziejme vezet per 5 minuta Perziejme vezet per 5 minuta Perziejme vezet per 5 minuta Perziejme vezet per 5 minuta Perziejme vezet per 5 minuta Perziejme vezet per 5 minuta',
         'Piqeni per 30 minuta'
     ]),
     new ResultModel(
@@ -30,9 +35,14 @@ export const RESULTS = [
         '30 min',
         'puding',
         [
-            '2 Vezë',
-            '1 gote qumësht',
-            '1/2 kg Miell'
+            'Vezë',
+            'Qumësht',
+            'Miell'
+        ],
+        [
+            '2',
+            '1 Gotë',
+            '1 KG'
         ], [
         'Perziejme vezet per 5 minuta',
         'Hedhim miellin',
@@ -44,9 +54,14 @@ export const RESULTS = [
         '30 min',
         'pastaBolonjeze',
         [
-            '2 Vezë',
-            '1 gote qumësht',
-            '1/2 kg Miell'
+            'Vezë',
+            'Qumësht',
+            'Miell'
+        ],
+        [
+            '2',
+            '1 Gotë',
+            '1 KG'
         ], [
         'Perziejme vezet per 5 minuta',
         'Hedhim miellin',

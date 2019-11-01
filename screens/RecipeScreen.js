@@ -26,7 +26,10 @@ const ReceipeScreen = props => {
             title={selectedRecipe.label}
             value={selectedRecipe.value}
             ingredients={selectedRecipe.ingredients}
-            steps={selectedRecipe.steps} />
+            quantities={selectedRecipe.quantities}
+            steps={selectedRecipe.steps}
+            id={selectedRecipe.id}
+            time={selectedRecipe.time} />
 
     );
 }
@@ -37,7 +40,7 @@ ReceipeScreen.navigationOptions = navigationData => {
     return {
         headerTitle: title,
         headerRight: <HeaderButtons HeaderButtonComponent={HeaderButton}>
-            <Item title='Te preferuara' iconName='ios-star' onPress={() => { }} />
+            <Item title='Te preferuara' iconName='ios-heart-empty' onPress={() => { }} />
         </HeaderButtons>
     };
 }

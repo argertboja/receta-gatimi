@@ -7,12 +7,13 @@
 */
 
 class ResultModel {
-    constructor(id, label, time, value, ingredients, steps) {
+    constructor(id, label, time, value, ingredients, quantities, steps) {
         this.id = id;
         this.label = label;
         this.time = time;
         this.value = value;
         this.ingredients = ingredients;
+        this.quantities = quantities;
         this.steps = steps;
     }
 }

@@ -65,7 +65,7 @@ const MealTabNavigation = createBottomTabNavigator({
     'Te preferuara': {
         screen: FavStack, navigationOptions: {
             tabBarIcon: tabInfo => {
-                return <Ionicons name='ios-star' size={25} color={tabInfo.tintColor} />
+                return <Ionicons name='ios-heart' size={25} color={tabInfo.tintColor} />
             }
         }
     }

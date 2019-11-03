@@ -9,10 +9,12 @@
 
 import React from 'react';
 import { Dimensions, FlatList, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
-import { RESULTS } from '../../data/results-data';
+import { useSelector } from 'react-redux';
 import Card from '../Card/Card';
 
 const ResultListView = props => {
+
+    const availableMeals = useSelector(state => state.meals.filteredMeals);
 
     const styles = StyleSheet.create({
         screen: {
@@ -42,7 +44,7 @@ const ResultListView = props => {
         <ScrollView>
             <FlatList
                 keyExtractor={(item, index) => item.id}
-                data={RESULTS} renderItem={renderResults}
+                data={availableMeals} renderItem={renderResults}
                 numColumns={props.numCol} />
         </ScrollView>
     );

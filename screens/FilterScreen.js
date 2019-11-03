@@ -7,7 +7,7 @@
 */
 
 // Imports
-import React, { useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { Platform, StyleSheet, Switch, Text, View } from 'react-native';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
 import HeaderButton from '../components/Buttons/HeaderButton';
@@ -33,6 +33,21 @@ const FilterScreen = props => {
     const [isFruit, setIsFruit] = useState(false);
     const [isSpicy, setIsSpicy] = useState(false);
     const [isSeaFood, setIsSeaFood] = useState(false);
+
+    const saveFilters = useCallback(() => {
+        const filterResults = {
+            vegetarian: isVegetarian,
+            diabetic: isDiabetic,
+            fruit: isFruit,
+            spicy: isSpicy,
+            seaFood: isSeaFood
+        }
+        console.log(filterResults);
+    }, [isVegetarian, isDiabetic, isFruit, isSeaFood, isSpicy]);
+
+    useEffect(() => {
+        props.navigation.setParams({ save: saveFilters });
+    }, [saveFilters]);
 
     return (
         <View style={style.screen}>
@@ -64,9 +79,22 @@ const FilterScreen = props => {
 FilterScreen.navigationOptions = navData => {
     return ({
         headerTitle: 'Filterat',
-        headerLeft: <HeaderButtons HeaderButtonComponent={HeaderButton}>
-            <Item title='Te preferuara' iconName='ios-arrow-round-back' onPress={() => { navData.navigation.navigate({ routeName: 'Meals' }) }} />
-        </HeaderButtons>
+        headerLeft: <HeaderButtons HeaderButtonComponent={HeaderButton} >
+            <Item
+                title='Menu'
+                iconName='ios-menu'
+                onPress={() => {
+                    navData.navigation.toggleDrawer();
+                }}
+            />
+        </HeaderButtons>,
+        headerRight: <HeaderButtons HeaderButtonComponent={HeaderButton} >
+            <Item
+                title='Menu'
+                iconName='ios-save'
+                onPress={navData.navigation.getParam('save')}
+            />
+        </HeaderButtons>,
     });
 }
 

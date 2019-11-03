@@ -11,7 +11,17 @@ import { AppLoading } from 'expo';
 import * as Font from 'expo-font';
 import React, { useState } from 'react';
 import { StyleSheet } from 'react-native';
+import { Provider } from 'react-redux';
+import { combineReducers, createStore } from 'redux';
 import MealsNavigation from './navigation/MealsNavigation';
+import { mealReducer } from './store/reducers/meals';
+
+
+const mainReducer = combineReducers({
+    meals: mealReducer
+});
+
+const store = createStore(mainReducer)
 
 
 const fetchFonts = () => {
@@ -33,7 +43,7 @@ export default function App() {
     }
 
     return (
-        <MealsNavigation />
+        <Provider store={store}><MealsNavigation /></Provider>
     );
 }
 

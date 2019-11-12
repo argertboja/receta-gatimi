@@ -8,14 +8,16 @@
 
 // Imports
 import React from 'react';
-import { StyleSheet } from 'react-native';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
+import { useSelector } from 'react-redux';
 import HeaderButton from '../components/Buttons/HeaderButton';
 import ResultListView from '../components/Lists/ResultsListView';
 
 const FavoritesScreen = props => {
+    const availableMeals = useSelector(state => state.meals.favoriteMeals);
+
     return (
-        <ResultListView navigation={props.navigation} numCol={1} />
+        <ResultListView navigation={props.navigation} numCol={1} meals={availableMeals} />
     );
 }
 
@@ -32,13 +34,5 @@ FavoritesScreen.navigationOptions = navData => {
         </HeaderButtons>
     };
 }
-
-const style = StyleSheet.create({
-    screen: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center'
-    }
-});
 
 export default FavoritesScreen;

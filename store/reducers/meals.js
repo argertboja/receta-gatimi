@@ -8,6 +8,7 @@
 */
 
 import { RESULTS } from '../../data/results-data';
+import { TOGGLE_FAVORITE } from '../actions/meals';
 
 const initialState = {
     meals: RESULTS,
@@ -16,7 +17,22 @@ const initialState = {
 }
 
 const mealReducer = (state = initialState, action) => {
-    return state;
+    switch (action.type) {
+        case TOGGLE_FAVORITE:
+            const existingIndex = state.favoriteMeals.findIndex(meal => meal.id === action.mealId);
+            if (existingIndex >= 0) {
+                console.log("found")
+                const oldFav = [...state.favoriteMeals];
+                oldFav.splice(existingIndex, 1);
+                return { ...state, favoriteMeals: oldFav };
+            } else {
+                console.log("not found")
+                const meal = state.meals.find(meal => meal.id === action.mealId);
+                return { ...state, favoriteMeals: state.favoriteMeals.concat(meal) };
+            }
+        default:
+            return state;
+    }
 }
 
 export default mealReducer;

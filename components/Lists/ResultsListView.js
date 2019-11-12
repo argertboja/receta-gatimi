@@ -9,12 +9,11 @@
 
 import React from 'react';
 import { Dimensions, FlatList, ScrollView, StyleSheet, TouchableOpacity } from 'react-native';
-import { useSelector } from 'react-redux';
 import Card from '../Card/Card';
 
 const ResultListView = props => {
 
-    const availableMeals = useSelector(state => state.meals.filteredMeals);
+    const availableMeals = props.meals;
 
     const styles = StyleSheet.create({
         screen: {

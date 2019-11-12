@@ -14,14 +14,14 @@ import { StyleSheet } from 'react-native';
 import { Provider } from 'react-redux';
 import { combineReducers, createStore } from 'redux';
 import MealsNavigation from './navigation/MealsNavigation';
-import { mealReducer } from './store/reducers/meals';
+import mealReducer from './store/reducers/meals';
 
 
 const mainReducer = combineReducers({
     meals: mealReducer
 });
 
-const store = createStore(mainReducer)
+const store = createStore(mainReducer);
 
 
 const fetchFonts = () => {

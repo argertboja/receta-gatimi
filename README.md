@@ -9,11 +9,11 @@ is mostly designed for students who most probably lack experience in cooking. Th
 <hr /> 
 
 ### Screenshots:
-#### Splash Screen: 
-<center><img src="https://github.com/argertboja/EasyPlate/blob/master/Screenshots/1.jpg" width="200" height="400"></center><br>
+#### Ingredients Screen: 
+<center><img src="https://github.com/argertboja/receta-gatimi/blob/master/screenshots/1.jpeg" width="200" height="400"></center><br>
 
-#### Ingredients Screen:
-<center><img src="https://github.com/argertboja/EasyPlate/blob/master/Screenshots/2.jpg" width="200" height="400"></center><br>
+#### Results Screen:
+<center><img src="https://github.com/argertboja/receta-gatimi/blob/master/screenshots/2.jpeg" width="200" height="400"></center><br>
 
 #### Recipe Screen:
-<center><img src="https://github.com/argertboja/EasyPlate/blob/master/Screenshots/3.jpg" width="200" height="400"></center><br>
+<center><img src="https://github.com/argertboja/receta-gatimi/blob/master/screenshots/3.jpeg" width="200" height="400"></center><br>
